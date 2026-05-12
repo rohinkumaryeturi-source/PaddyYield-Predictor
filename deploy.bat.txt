@@ -14,7 +14,7 @@ git commit -m "Initial: Paddy Yield Predictor v1.0"
 
 REM Create GitHub repo link (replace YOUR_USERNAME)
 set /p GITHUB_USER="Enter your GitHub username: "
-git remote add origin https://github.com/rohinkumaryeturi-source/paddy-yield-predictor.git
+git remote add origin https://github.com/rohinkumaryeturi-source/PaddyYield-Predictor.git
 git branch -M main
 git push -u origin main
 
