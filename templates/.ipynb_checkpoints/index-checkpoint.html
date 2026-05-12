@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Paddy Yield</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+
+    
+    
+<body>
+
+<div class="container">
+
+    <h2>Paddy Yield Prediction System</h2>
+
+    <form method="POST">
+		<!-- Basic field group; you can style / break into rows as you like -->
+
+<!-- <input type="number" step="any" name="Hectares_"                  placeholder="Hectares" required> -->
+<input type="number" step="any" name="Agriblock"                  placeholder="Agriblock" required>
+<input type="number" step="any" name="Variety"                    placeholder="Variety" required>
+<input type="number" step="any" name="Soil_Types"                 placeholder="Soil Types" required>
+<!-- <input type="number" step="any" name="Seedratein_Kg"              placeholder="Seedrate (in Kg)" required> -->
+<!-- <input type="number" step="any" name="LP_Mainfieldin_Tonnes"      placeholder="LP Mainfield (in Tonnes)" required> -->
+<input type="number" step="any" name="Nursery"                    placeholder="Nursery" required>
+<!-- <input type="number" step="any" name="Nursery_area_Cents"         placeholder="Nursery area (Cents)" required>-->
+<input type="number" step="any" name="LP_nurseryareain_Tonnes"    placeholder="LP nursery area (in Tonnes)" required>
+
+<!-- <input type="number" step="any" name="DAP_20days"                 placeholder="DAP 20 days" required>-->
+<input type="number" step="any" name="Weed28D_thiobencarb"        placeholder="Weed28D thiobencarb" required>
+<!-- <input type="number" step="any" name="Urea_40Days"                placeholder="Urea 40 Days" required>
+<input type="number" step="any" name="Potassh_50Days"             placeholder="Potassh 50 Days" required>
+<input type="number" step="any" name="Micronutrients_70Days"      placeholder="Micronutrients 70 Days" required> -->
+<input type="number" step="any" name="Pest_60Dayin_ml"            placeholder="Pest 60 Day (in ml)" required>
+
+<!-- <input type="number" step="any" name="30DRain_in_mm"              placeholder="30D Rain (in mm)" required>
+<input type="number" step="any" name="30DAIin_mm"                 placeholder="30D AI (in mm)" required>
+<input type="number" step="any" name="30_50DRain_in_mm"           placeholder="30-50D Rain (in mm)" required>
+<input type="number" step="any" name="30_50DAIin_mm"              placeholder="30-50D AI (in mm)" required> 0-->
+<input type="number" step="any" name="51_70DRainin_mm"            placeholder="51-70D Rain (in mm)" required>
+<input type="number" step="any" name="51_70AIin_mm"               placeholder="51-70D AI (in mm)" required>
+<!-- <input type="number" step="any" name="71_105DRainin_mm"           placeholder="71-105D Rain (in mm)" required>-->
+<input type="number" step="any" name="71_105DAIin_mm"             placeholder="71-105D AI (in mm)" required>
+
+<!-- <input type="number" step="any" name="Min_temp_D1_D30"            placeholder="Min temp D1-D30" required>-->
+<input type="number" step="any" name="Max_temp_D1_D30"            placeholder="Max temp D1-D30" required>
+<input type="number" step="any" name="Min_temp_D31_D60"           placeholder="Min temp D31-D60" required>
+<!-- <input type="number" step="any" name="Max_temp_D31_D60"           placeholder="Max temp D31-D60" required>-->
+<input type="number" step="any" name="Min_temp_D61_D90"           placeholder="Min temp D61-D90" required>
+<input type="number" step="any" name="Max_temp_D61_D90"           placeholder="Max temp D61-D90" required>
+<input type="number" step="any" name="Min_temp_D91_D120"          placeholder="Min temp D91-D120" required><!-- 
+<input type="number" step="any" name="Max_temp_D91_D120"          placeholder="Max temp D91-D120" required>-->
+
+<!-- <input type="number" step="any" name="Inst_Wind_Speed_D1_D30in_Knots"   placeholder="Inst Wind Speed D1-D30 (Knots)" required> -->
+<input type="number" step="any" name="Inst_Wind_Speed_D31_D60in_Knots"  placeholder="Inst Wind Speed D31-D60 (Knots)" required>
+<!-- <input type="number" step="any" name="Inst_Wind_Speed_D61_D90in_Knots"  placeholder="Inst Wind Speed D61-D90 (Knots)" required>-->
+<input type="number" step="any" name="Inst_Wind_Speed_D91_D120in_Knots" placeholder="Inst Wind Speed D91-D120 (Knots)" required>
+
+<!-- <input type="number" step="any" name="Wind_Direction_D1_D30"      placeholder="Wind Direction D1-D30" required>
+<input type="number" step="any" name="Wind_Direction_D31_D60"     placeholder="Wind Direction D31-D60" required>-->
+<input type="number" step="any" name="Wind_Direction_D61_D90"     placeholder="Wind Direction D61-D90" required>
+<input type="number" step="any" name="Wind_Direction_D91_D120"    placeholder="Wind Direction D91-D120" required>
+
+<input type="number" step="any" name="Relative_Humidity_D1_D30"   placeholder="Relative Humidity D1-D30" required>
+<input type="number" step="any" name="Relative_Humidity_D31_D60"  placeholder="Relative Humidity D31-D60" required>
+<!-- <input type="number" step="any" name="Relative_Humidity_D61_D90"  placeholder="Relative Humidity D61-D90" required>-->
+<input type="number" step="any" name="Relative_Humidity_D91_D120" placeholder="Relative Humidity D91-D120" required>
+        <button type="submit">Predict Paddy Yield</button>
+    </form>
+
+    {% if predict is not none %}
+        <div class="result">
+            Predicted Paddy Yield: {{ predict }}
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div style="margin-top:10px; color:red; font-weight:bold;">
+            Debug error: {{ error }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
